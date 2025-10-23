@@ -17,23 +17,33 @@ Pod::Spec.new do |s|
   }
 
   s.vendored_frameworks = [
-      'Flutter.xcframework',
-      'App.xcframework',
-      'FlutterPluginRegistrant.xcframework',
-      'path_provider_foundation.xcframework',
-      'camera_avfoundation.xcframework',
-	'flutter_inappwebview_ios.xcframework',
-	'image_picker_ios.xcframework',
-	'OrderedSet.xcframework',
-	'permission_handler_apple.xcframework',
-	'share_plus.xcframework',
-	'shared_preferences_foundation.xcframework',
-	'url_launcher_ios.xcframework'
+      'Frameworks/Release/Flutter.xcframework',
+      'Frameworks/Release/App.xcframework',
+      'Frameworks/Release/FlutterPluginRegistrant.xcframework',
+      'Frameworks/Release/path_provider_foundation.xcframework',
+      'Frameworks/Release/camera_avfoundation.xcframework',
+	'Frameworks/Release/flutter_inappwebview_ios.xcframework',
+	'Frameworks/Release/image_picker_ios.xcframework',s
+	'Frameworks/Release/OrderedSet.xcframework',
+	'Frameworks/Release/permission_handler_apple.xcframework',
+	'Frameworks/Release/share_plus.xcframework',
+	'Frameworks/Release/shared_preferences_foundation.xcframework',
+	'Frameworks/Release/url_launcher_ios.xcframework'
 
   ]
     # If you use specific Flutter plugins, add them as dependencies
     s.dependency 'Flutter'
   
+  # Fix 2: Add preserve_paths to help CocoaPods find files
+  s.preserve_paths = 'Frameworks/**/*'
+  
+  # Fix 3: Ensure source_files is present (can be empty)
+  s.source_files = 'Classes/**/*'
+  
+  # Fix 4: Add this to handle framework discovery
+  s.pod_target_xcconfig = {
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/MyPhsarModule_IOS/Frameworks/Release/**'
+  }
 
   # Make sure the pod is validated correctly
   s.pod_target_xcconfig = {
