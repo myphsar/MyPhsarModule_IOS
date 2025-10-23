@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
       'Frameworks/Release/path_provider_foundation.xcframework',
       'Frameworks/Release/camera_avfoundation.xcframework',
 	'Frameworks/Release/flutter_inappwebview_ios.xcframework',
-	'Frameworks/Release/image_picker_ios.xcframework',s
+	'Frameworks/Release/image_picker_ios.xcframework',
 	'Frameworks/Release/OrderedSet.xcframework',
 	'Frameworks/Release/permission_handler_apple.xcframework',
 	'Frameworks/Release/share_plus.xcframework',
@@ -36,10 +36,7 @@ Pod::Spec.new do |s|
   
   # Fix 2: Add preserve_paths to help CocoaPods find files
   s.preserve_paths = 'Frameworks/**/*'
-  
-  # Fix 3: Ensure source_files is present (can be empty)
-  s.source_files = 'Classes/**/*'
-  
+ 
   # Fix 4: Add this to handle framework discovery
   s.pod_target_xcconfig = {
     'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/MyPhsarModule_IOS/Frameworks/Release/**'
