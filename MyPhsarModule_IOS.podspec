@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
   ]
     # If you use specific Flutter plugins, add them as dependencies
     s.dependency 'Flutter'
-  
+  s.vendored_frameworks = '**/*.xcframework'
   # Fix 2: Add preserve_paths to help CocoaPods find files
   s.preserve_paths = 'Frameworks/**/*'
  
