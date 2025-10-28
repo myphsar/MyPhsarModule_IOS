@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MyPhsarModule_IOS'
-  s.version          = '1.0.0'
+  s.version          = '1.0.2'
   s.summary          = 'A Flutter module for iOS'
   s.description      = <<-DESC
   This module provides Flutter functionality to native iOS apps.
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   }
 
   s.vendored_frameworks = [
-      'Frameworks/Release/Flutter.xcframework',
+   
       'Frameworks/Release/App.xcframework',
       'Frameworks/Release/FlutterPluginRegistrant.xcframework',
       'Frameworks/Release/path_provider_foundation.xcframework',
